@@ -23,6 +23,7 @@ jobs:
         name: webpack artifacts
         path: public/
   test:
+    needs: build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -31,6 +32,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/download-artifact@main
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
