@@ -23,4 +23,4 @@ $longhash=[System.BitConverter]::ToString($hash).Replace("-","").ToLower()
 
 # Create short hash
 $shorthash=$longhash.SubString(0,5)
-Write-Output "$shorthash Run from master"
+Write-Output "$shorthash Run from test"
