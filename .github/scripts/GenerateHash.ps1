@@ -8,7 +8,6 @@
 #>
 
 param(
-    [Parameter(Mandatory)]
     [string]$stringToHash
 )
 
