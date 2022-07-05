@@ -1,0 +1,19 @@
+name: Provision SilverLake Infrastructure
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  up:
+    name: test
+    runs-on: 3shape-ubuntu-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: See main file
+        run: |
+          pwsh ./.github/scripts/GenerateHash.ps1 -stringToHash ${{ github.event.inputs.git-ref }}
+          echo ${{ github.event.inputs.git-ref }}
