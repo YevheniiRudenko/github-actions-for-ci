@@ -6,7 +6,7 @@ on:
 jobs:
   up:
     name: test
-    runs-on: 3shape-ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
         uses: actions/checkout@v2
